@@ -57,7 +57,7 @@ function TrackInfo() {
 
   return (
     <div>
-      <span>TrackInfo</span>
+      <span>Search for a Song!</span>
       <br />
 
       <form action="">

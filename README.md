@@ -1,3 +1,22 @@
+# Shazam API based Song Searching App
+# PerScholas / Project 2
+- This is my second project for PerScholas. It is based on all of the React reposistories we have made in class. 
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
