@@ -1,8 +1,18 @@
 import React from 'react'
 
-function DisplaySong() {
+// function to display data from song search
+function DisplaySong({ result }) {
+  // if there isn't any results, display this
+  if (!result || !result.tracks || !result.tracks.hits || !result.tracks.hits[0]) {
+    return <div>No Results Found</div>
+  }
+  console.log(result);
   return (
-    <div>DisplaySong</div>
+    <div>
+      <h1>{result.tracks.hits[0].track.title}</h1>
+      <h2>{result.tracks.hits[0].track.subtitle}</h2>
+      <img src={result.tracks.hits[0].track.images.coverarthq} alt='image' />
+    </div>
   )
 }
 

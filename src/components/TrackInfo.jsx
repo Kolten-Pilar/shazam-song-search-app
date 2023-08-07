@@ -14,7 +14,7 @@ function TrackInfo() {
 
   // import the API
   const url =
-    "https://shazam.p.rapidapi.com/search?term=a%20milli&locale=en-US&offset=0&limit=5";
+    `https://shazam.p.rapidapi.com/search?term=${form.title},${form.artist}&locale=en-US&offset=0&limit=5`;
   const options = {
     method: "GET",
     headers: {
@@ -35,7 +35,7 @@ function TrackInfo() {
         // making the API call
         const response = await fetch(url, options);
         const result = await response.json();
-        console.log(result);
+        // console.log(result);
         setSong({ result: result });
       } catch (error) {
         console.log(error);
@@ -53,7 +53,7 @@ function TrackInfo() {
       setForm({ ...form, artist: value });
     }
   };
-  console.log(form.title, form.artist);
+  // console.log(form.title, form.artist);
 
   return (
     <div>
