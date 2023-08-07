@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import DisplaySong from './DisplaySong'
+import { VITE_API_KEY } from "../../config";
 
 function TrackInfo() {
   // initialize state for the forms
@@ -17,7 +18,7 @@ function TrackInfo() {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY,
+      "X-RapidAPI-Key": VITE_API_KEY,
       "X-RapidAPI-Host": "shazam.p.rapidapi.com",
     },
   };
@@ -27,8 +28,8 @@ function TrackInfo() {
     e.preventDefault();
 
     // check if the forms are empty
-    if (form.title == "" || form.artist == "") {
-      alert("Please fill out the forms");
+    if (form.title == "") {
+      alert("Please Enter a Song Title");
     } else
       try {
         // making the API call
