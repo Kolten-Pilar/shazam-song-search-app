@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import DisplaySong from './DisplaySong'
 
 function TrackInfo() {
   // initialize state for the forms
@@ -21,7 +22,68 @@ function TrackInfo() {
     },
   };
 
-  return <div>TrackInfo</div>;
+  // fetch the data from API
+  async function fetchSong(e) {
+    e.preventDefault();
+
+    // check if the forms are empty
+    if (form.title == "" || form.artist == "") {
+      alert("Please fill out the forms");
+    } else
+      try {
+        // making the API call
+        const response = await fetch(url, options);
+        const result = await response.json();
+        console.log(result);
+        setSong({ result: result });
+      } catch (error) {
+        console.log(error);
+      }
+  }
+
+  const handleChange = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+
+    if (name == "title") {
+      setForm({ ...form, title: value });
+    }
+    if (name == "artist") {
+      setForm({ ...form, artist: value });
+    }
+  };
+  console.log(form.title, form.artist);
+
+  return (
+    <div>
+      <span>TrackInfo</span>
+      <br />
+
+      <form action="">
+        <input
+          type="text"
+          name="title"
+          placeholder="Title"
+          onChange={handleChange}
+        ></input>
+        &nbsp; &nbsp; &nbsp; &nbsp;
+        <input
+          type="text"
+          name="artist"
+          placeholder="Artist"
+          onChange={handleChange}
+        ></input>
+        &nbsp; &nbsp; &nbsp; &nbsp;
+        <button onClick={fetchSong}>Submit</button>
+      </form>
+
+      {song.result !== undefined ? (
+        <div>
+          <DisplaySong result={song.result} />
+        </div>
+      ) : null}
+    </div>
+  );
 }
 
 export default TrackInfo;
