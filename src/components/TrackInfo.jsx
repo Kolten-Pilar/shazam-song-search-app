@@ -58,6 +58,12 @@ function TrackInfo() {
 
   return (
     <div className="main-info">
+      <div className="side-bar">
+        <button>this</button>
+        <button>is</button>
+        <button>the</button>
+      </div>
+      <div className="search-info">
       <span>Search for a Song!</span>
       <br />
 
@@ -84,6 +90,7 @@ function TrackInfo() {
           <DisplaySong result={song.result} />
         </div>
       ) : null}
+      </div>
     </div>
   );
 }
