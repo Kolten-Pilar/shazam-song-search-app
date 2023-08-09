@@ -35,8 +35,7 @@
   align-items: flex-start;
   width: 30%;
   height: 100vh;
-  background: #939b99;
-  opacity: 0.2;
+  background-color: rgba(208, 216, 214, 0.2);
   color: #fff;
   border-radius: 2rem;
   font-size: 1.5rem;
