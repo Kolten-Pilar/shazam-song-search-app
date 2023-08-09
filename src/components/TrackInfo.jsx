@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DisplaySong from './DisplaySong'
 import { VITE_API_KEY } from "../../config";
+import './App.css'
 
 function TrackInfo() {
   // initialize state for the forms
@@ -56,7 +57,7 @@ function TrackInfo() {
   // console.log(form.title, form.artist);
 
   return (
-    <div>
+    <div className="main-info">
       <span>Search for a Song!</span>
       <br />
 
@@ -79,7 +80,7 @@ function TrackInfo() {
       </form>
 
       {song.result !== undefined ? (
-        <div>
+        <div className="song-display">
           <DisplaySong result={song.result} />
         </div>
       ) : null}
