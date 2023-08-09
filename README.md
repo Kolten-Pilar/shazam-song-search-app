@@ -16,6 +16,19 @@
 - I based my styling off of the Apple CarPlay music app.
 ![Apple CarPlay Music App](https://canada.crutchfieldonline.com/ImageBank/v20191007110100/ImageHandler/scale/978/978/core/learn/article/3450/carplay-screenshot-4.jpg)
 
+--------------------------------------------------
+# Unsolved Problems
+- I wanted the Album Title to be listed, however it is not in the API data. Further research shows the API has an endpoint that has albums, but I am unsure of how to implement it.
+
+--------------------------------------------------
+# Technologies Used
+- React+Vite
+- Shazam API
+- HTML
+- CSS
+- JavaScript
+
+
 
 
 
