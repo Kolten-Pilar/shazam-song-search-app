@@ -54,6 +54,7 @@ function TrackInfo() {
     }
   };
   // console.log(form.title, form.artist);
+  
 
   return (
     <div className="main-info">

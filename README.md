@@ -13,6 +13,7 @@
 --------------------------------------------------
 # Approach Taken
 - I started by creating a new React app using the Vite template and deleted unnecessary files.
+- The app is heavily influenced from the React reposistories we have made in class (Weather App, Movie App, etc.)
 - I based my styling off of the Apple CarPlay music app.
 ![Apple CarPlay Music App](https://canada.crutchfieldonline.com/ImageBank/v20191007110100/ImageHandler/scale/978/978/core/learn/article/3450/carplay-screenshot-4.jpg)
 
