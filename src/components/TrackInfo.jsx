@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import DisplaySong from './DisplaySong'
+import DisplaySong from "./DisplaySong";
 import { VITE_API_KEY } from "../../config";
-import './App.css'
+import "./App.css";
 
 function TrackInfo() {
   // initialize state for the forms
@@ -14,8 +14,7 @@ function TrackInfo() {
   const [song, setSong] = useState([]);
 
   // import the API
-  const url =
-    `https://shazam.p.rapidapi.com/search?term=${form.title},${form.artist}&locale=en-US&offset=0&limit=5`;
+  const url = `https://shazam.p.rapidapi.com/search?term=${form.title},${form.artist}&locale=en-US&offset=0&limit=5`;
   const options = {
     method: "GET",
     headers: {
@@ -59,37 +58,50 @@ function TrackInfo() {
   return (
     <div className="main-info">
       <div className="side-bar">
-        <button>this</button>
-        <button>is</button>
+        {/* display current time */}
+        {new Date()
+          .toLocaleTimeString("en-IT", {
+            hour12: true,
+            hour: "2-digit",
+            minute: "2-digit",
+          })
+          .replace("AM", "")
+          .replace("PM", "")}
+
+        <div className="middle-buttons">
+          <button>this</button>
+          <button>is</button>
+          <button>the</button>
+        </div>
         <button>the</button>
       </div>
       <div className="search-info">
-      <span>Search for a Song!</span>
-      <br />
+        <span>Search for a Song! <br /> </span>(✳ Indicates Required Fields)
+        <br />
 
-      <form action="">
-        <input
-          type="text"
-          name="title"
-          placeholder="Title"
-          onChange={handleChange}
-        ></input>
-        &nbsp; &nbsp; &nbsp; &nbsp;
-        <input
-          type="text"
-          name="artist"
-          placeholder="Artist"
-          onChange={handleChange}
-        ></input>
-        &nbsp; &nbsp; &nbsp; &nbsp;
-        <button onClick={fetchSong}>Submit</button>
-      </form>
+        <form action="">
+          ✳<input
+            type="text"
+            name="title"
+            placeholder="Title"
+            onChange={handleChange}
+          ></input>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <input
+            type="text"
+            name="artist"
+            placeholder="Artist"
+            onChange={handleChange}
+          ></input>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+          <button onClick={fetchSong}>Submit</button>
+        </form>
 
-      {song.result !== undefined ? (
-        <div className="song-display">
-          <DisplaySong result={song.result} />
-        </div>
-      ) : null}
+        {song.result !== undefined ? (
+          <div className="song-display">
+            <DisplaySong result={song.result} />
+          </div>
+        ) : null}
       </div>
     </div>
   );
