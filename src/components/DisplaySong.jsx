@@ -12,6 +12,7 @@ function DisplaySong({ result }) {
       <h1>{result.tracks.hits[0].track.title}</h1>
       <h2>{result.tracks.hits[0].track.subtitle}</h2>
       <img src={result.tracks.hits[0].track.images.coverarthq} alt='image' />
+      {/* I wanted to add the album, but there was no data for it. So the album will be in the cover art (hopefully) */}
     </div>
   )
 }
