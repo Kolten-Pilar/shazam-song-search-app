@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import DisplaySong from "./DisplaySong";
-import { VITE_API_KEY } from "../../config";
+// import { VITE_API_KEY } from "../../config";
 import "./App.css";
 
 function TrackInfo() {
@@ -16,12 +16,14 @@ function TrackInfo() {
   // initialize state for favorite songs
   const [favorite, setFavorite] = useState([]);
 
+  const APIKEY = import.meta.env.VITE_API_KEY;
+
   // import the API
   const url = `https://shazam.p.rapidapi.com/search?term=${form.title},${form.artist}&locale=en-US&offset=0&limit=5`;
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": VITE_API_KEY,
+      "X-RapidAPI-Key": APIKEY,
       "X-RapidAPI-Host": "shazam.p.rapidapi.com",
     },
   };
@@ -51,7 +53,7 @@ function TrackInfo() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": VITE_API_KEY,
+        "X-RapidAPI-Key": APIKEY,
         "X-RapidAPI-Host": "shazam.p.rapidapi.com",
       },
     };
