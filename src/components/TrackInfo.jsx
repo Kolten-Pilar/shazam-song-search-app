@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import DisplaySong from "./DisplaySong";
-import { VITE_API_KEY } from "../../config";
+import { VITE_API_KEY } from "./config";
 import "./App.css";
 
 function TrackInfo() {
