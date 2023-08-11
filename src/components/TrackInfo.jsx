@@ -103,7 +103,7 @@ function TrackInfo() {
           .replace("PM", "")}
 
         <div className="middle-buttons">
-          <button onClick={addFavorite}>💘</button>
+          <button className="heart" onClick={addFavorite}>💘</button>
         </div>
         <button>Clear Favorites</button>
       </div>
