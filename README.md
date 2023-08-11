@@ -21,6 +21,8 @@
 --------------------------------------------------
 # Unsolved Problems
 - I wanted the Album Title to be listed, however it is not in the API data. Further research shows the API has an endpoint that has albums, but I am unsure of how to implement it.
+- I want to add local storage but currently I am unsure of how to implement it.
+- I want to add functionality to the clear favorites button.
 
 --------------------------------------------------
 # Technologies Used
