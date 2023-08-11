@@ -9,6 +9,7 @@
 - This app is a song searching app that uses the Shazam API to search for songs based on the user's input.
 - The user can search for a song by typing in the song name and artist name in the search bar (only the song name is required, but adding the artist will narrow results).
 - The results will be the top track from the first hits array in the API response.
+- The user can also press the heart button on the left side to add the song to their favorites list which will be displayed on the right side.
 
 --------------------------------------------------
 # Approach Taken

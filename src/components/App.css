@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items:center;
+  align-items: center;
   /* height: 100vh; */
   /* width: 100%; */
   /* flex-grow: 1; */
@@ -19,12 +19,38 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   text-align: center;
-  /* padding: 2rem; */
+  padding-left: 23rem;
+  position: absolute;
+  top: 0;
+  bottom: 125px;
+  right: 0;
+  left: 0;
+}
+
+button {
+  color: rgb(255, 255, 255);
+  font-size: 19px;
+  padding: 13px;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    to right,
+    #282c34 0%,
+     rgb(14, 15, 16) 50%,
+    #282c34 100%
+  );
+  border: 2px solid #fff;
+  /* display: inline-block; */
+}
+button:hover {
+  background: #fff;
 }
 
 .main-info span {
-  font-size: 25px;
+  font-size: 50px;
   font-weight: 600;
+  position: fixed;
+  top: 8rem;
+  left: 30rem;
 }
 
 .song-display {
@@ -36,6 +62,11 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
   width: 10%;
   height: 90vh;
   background-color: rgba(208, 216, 214, 0.2);
@@ -45,11 +76,11 @@
   /* padding: 1rem 2rem; */
   border: solid 1px;
   /* margin-right: 6rem; */
+  font-size: 3rem;
 }
 
 .side-bar button {
   margin: 1rem 0;
-  
 }
 .middle-buttons {
   display: flex;
@@ -61,4 +92,5 @@
 .favorite-songs {
   justify-content: flex-end;
   margin-left: 8rem;
+  margin-bottom: 12rem;
 }

@@ -104,8 +104,6 @@ function TrackInfo() {
 
         <div className="middle-buttons">
           <button onClick={addFavorite}>💘</button>
-          <button>is</button>
-          <button>the</button>
         </div>
         <button>the</button>
       </div>
