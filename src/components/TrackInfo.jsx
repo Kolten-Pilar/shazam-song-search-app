@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DisplaySong from "./DisplaySong";
 import { VITE_API_KEY } from "../../config";
 import "./App.css";
@@ -12,6 +12,9 @@ function TrackInfo() {
 
   // initialize state for the song info
   const [song, setSong] = useState([]);
+
+  // initialize state for favorite songs
+  const [favorite, setFavorite] = useState([]);
 
   // import the API
   const url = `https://shazam.p.rapidapi.com/search?term=${form.title},${form.artist}&locale=en-US&offset=0&limit=5`;
@@ -53,8 +56,18 @@ function TrackInfo() {
       setForm({ ...form, artist: value });
     }
   };
+
+  // function to add a song to favorites
+  const addFavorite = () => {
+    setFavorite([...favorite, song.result.tracks.hits[0].track])
+  }
   // console.log(form.title, form.artist);
   
+    //  load a default song that displays upon page load with useEffect
+    //  useEffect(() => {
+    //   setForm({ title: 'The Box', artist: 'Roddy Ricch'})
+    //   fetchSong()
+    // }, []);
 
   return (
     <div className="main-info">
@@ -70,7 +83,7 @@ function TrackInfo() {
           .replace("PM", "")}
 
         <div className="middle-buttons">
-          <button>this</button>
+          <button onClick={addFavorite}>💘</button>
           <button>is</button>
           <button>the</button>
         </div>
@@ -103,6 +116,18 @@ function TrackInfo() {
             <DisplaySong result={song.result} />
           </div>
         ) : null}
+      </div>
+      {/* favorite song section */}
+      <div className="favorite-songs">
+        <h2>Favorite Songs</h2>
+        <ul>
+          {/* map through the favorite song array initialized with useState */}
+          {favorite.map((song, index) => (
+            <li key={index}>
+              <h3>{song.title} {song.subtitle}</h3>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
