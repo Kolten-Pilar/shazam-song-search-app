@@ -44,6 +44,27 @@ function TrackInfo() {
         console.log(error);
       }
   }
+  //Create a default song function that we can pass into useEffect to display a song upon page load
+  const defaultSong = async () => {
+    const url =
+      "https://shazam.p.rapidapi.com/search?term=the%20box&locale=en-US&offset=0&limit=5";
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": VITE_API_KEY,
+        "X-RapidAPI-Host": "shazam.p.rapidapi.com",
+      },
+    };
+
+    try {
+      const response = await fetch(url, options);
+      const result = await response.json();
+      // console.log(result);
+      setSong({ result: result });
+    } catch (error) {
+      console.error(error, 'error');
+    }
+  };
 
   const handleChange = (e) => {
     let name = e.target.name;
@@ -59,15 +80,14 @@ function TrackInfo() {
 
   // function to add a song to favorites
   const addFavorite = () => {
-    setFavorite([...favorite, song.result.tracks.hits[0].track])
-  }
+    setFavorite([...favorite, song.result.tracks.hits[0].track]);
+  };
   // console.log(form.title, form.artist);
-  
-    //  load a default song that displays upon page load with useEffect
-    //  useEffect(() => {
-    //   setForm({ title: 'The Box', artist: 'Roddy Ricch'})
-    //   fetchSong()
-    // }, []);
+
+  //  load a default song that displays upon page load with useEffect
+  useEffect(() => {
+    defaultSong();
+  }, []);
 
   return (
     <div className="main-info">
@@ -90,11 +110,14 @@ function TrackInfo() {
         <button>the</button>
       </div>
       <div className="search-info">
-        <span>Search for a Song! <br /> </span>(✳ Indicates Required Fields)
+        <span>
+          Search for a Song! <br />{" "}
+        </span>
+        (✳ Indicates Required Fields)
         <br />
-
         <form action="">
-          ✳<input
+          ✳
+          <input
             type="text"
             name="title"
             placeholder="Title"
@@ -110,7 +133,6 @@ function TrackInfo() {
           &nbsp; &nbsp; &nbsp; &nbsp;
           <button onClick={fetchSong}>Submit</button>
         </form>
-
         {song.result !== undefined ? (
           <div className="song-display">
             <DisplaySong result={song.result} />
@@ -124,7 +146,9 @@ function TrackInfo() {
           {/* map through the favorite song array initialized with useState */}
           {favorite.map((song, index) => (
             <li key={index}>
-              <h3>{song.title} {song.subtitle}</h3>
+              <h3>
+                {song.title} {song.subtitle}
+              </h3>
             </li>
           ))}
         </ul>
