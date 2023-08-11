@@ -89,6 +89,11 @@ button:hover {
   align-items: center;
 }
 
+.heart {
+  font-size: 4rem;
+  margin: 1rem 0;
+}
+
 .favorite-songs {
   justify-content: flex-end;
   margin-left: 8rem;
