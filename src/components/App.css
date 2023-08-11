@@ -94,3 +94,11 @@ button:hover {
   margin-left: 8rem;
   margin-bottom: 12rem;
 }
+
+input {
+  height: 45px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: solid 2px black;
+}
