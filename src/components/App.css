@@ -37,14 +37,14 @@
   justify-content: space-between;
   align-items: center;
   width: 10%;
-  height: 100vh;
+  height: 90vh;
   background-color: rgba(208, 216, 214, 0.2);
   color: #fff;
   border-radius: 2rem;
   font-size: 1.5rem;
   /* padding: 1rem 2rem; */
   border: solid 1px;
-  margin-right: 6rem;
+  /* margin-right: 6rem; */
 }
 
 .side-bar button {
