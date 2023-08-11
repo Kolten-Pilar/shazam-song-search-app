@@ -111,7 +111,7 @@ function TrackInfo() {
         <span>
           Search for a Song! <br />{" "}
         </span>
-        <p>(✳ Indicates Required Fields)</p>
+        (✳ Indicates Required Fields)
         <br />
         <form action="">
           ✳

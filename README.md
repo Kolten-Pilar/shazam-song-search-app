@@ -23,6 +23,7 @@
 - I wanted the Album Title to be listed, however it is not in the API data. Further research shows the API has an endpoint that has albums, but I am unsure of how to implement it.
 - I want to add local storage but currently I am unsure of how to implement it.
 - I want to add functionality to the clear favorites button.
+- I need to refactor the css to incorporate a more responsive design. Currently, the app is only responsive to a certain screen size.
 
 --------------------------------------------------
 # Technologies Used
