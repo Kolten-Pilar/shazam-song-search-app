@@ -4,7 +4,7 @@
   justify-content: space-around;
   align-items: center;
   height: 100vh;
-  width: 90%;
+  width: 80%;
   /* flex-grow: 1; */
   background: #282c34;
   background: -moz-linear-gradient(top, #282c34 0%, #838e8d 50%, #282c34 100%);
