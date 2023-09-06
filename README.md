@@ -1,7 +1,7 @@
 # Shazam API based Song Searching App
 # PerScholas / Project 2
 - This is my second project for PerScholas. It is based on all of the React reposistories we have made in class. 
-- (insert hosted url when available)
+- https://tubular-kleicha-9c386d.netlify.app/
 - Link to API used: https://rapidapi.com/apidojo/api/shazam
 --------------------------------------------------
 
